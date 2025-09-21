@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TikTok Like Boost</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #25F4EE;
+    }
+    h1 span {
+      color: #FE2C55;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+    input[type="url"] {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #FE2C55;
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 30px;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: #25F4EE;
+      color: #000;
+    }
+    .msg {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #25F4EE;
+    }
+    .ad-banner {
+      margin: 20px auto;
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" class="logo" alt="TikTok Logo" />
+    <h1>TikTok <span>Like Boost</span></h1>
+  </header>
+
+  <h2>Submit Your Video Link Here</h2>
+  <p>Want real engagement—not bots? Submit your TikTok video link and we'll share it with our active creator community.</p>
+  <p>Each approved submission gets a <b>20-like community boost</b> plus quick tips to help your video reach more people—for free.</p>
+
+  <!-- Banner Ad (1st) -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'b92f896b7ff5b5a0afc4f81fa8caeacb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b92f896b7ff5b5a0afc4f81fa8caeacb/invoke.js"></script>
+  </div>
+
+  <input id="url" type="url" placeholder="https://www.tiktok.com/..." />
+  <br />
+  <button id="submit">Submit Link & Get Likes Now</button>
+  <div class="msg" id="msg"></div>
+
+  <!-- Banner Ad (2nd) -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'b92f896b7ff5b5a0afc4f81fa8caeacb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b92f896b7ff5b5a0afc4f81fa8caeacb/invoke.js"></script>
+  </div>
+
+  <!-- Banner Ad (3rd) -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'b92f896b7ff5b5a0afc4f81fa8caeacb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b92f896b7ff5b5a0afc4f81fa8caeacb/invoke.js"></script>
+  </div>
+
+  <!-- Banner Ad (4th) -->
+  <div class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'b92f896b7ff5b5a0afc4f81fa8caeacb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b92f896b7ff5b5a0afc4f81fa8caeacb/invoke.js"></script>
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById('submit');
+    const urlInput = document.getElementById('url');
+    const msg = document.getElementById('msg');
+
+    submitBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim();
+      if (!url) { msg.textContent = 'Please enter a TikTok URL.'; return; }
+
+      try {
+        const res = await fetch('/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+        const j = await res.json();
+        if (res.ok) {
+          msg.textContent = '✅ Likes will be delivered within the next 3 hours!';
+          urlInput.value = '';
+
+          // POPUNDER: open ad behind current tab
+          window.open("https://www.revenuecpmgate.com/c224b5yt9?key=679c5cc4d18f056a038435131688033c",
+            "_blank", "noopener,noreferrer");
+
+          // reload after submission
+          setTimeout(() => { window.location.reload(); }, 2000);
+
+        } else {
+          msg.textContent = 'Error: ' + (j.error || JSON.stringify(j));
+        }
+      } catch (e) {
+        msg.textContent = 'Network error: ' + e.message;
+      }
+    });
+  </script>
+
+  <!-- Social Bar Ad -->
+  <script type='text/javascript' src='//pl27691178.revenuecpmgate.com/38/3b/93/383b938f63f1abddbd0ad18130e7008c.js'></script>
+</body>
+</html>
