@@ -148,19 +148,22 @@
       if (!url) { msg.textContent = 'Please enter a TikTok URL.'; return; }
 
       try {
-        const res = await fetch('/submit', {
+        const res = await fetch('https://video-drop.onrender.com/submit', {   // full backend URL
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url })
+          body: JSON.stringify({ link: url })   // backend expects { link: "..." }
         });
+
         const j = await res.json();
         if (res.ok) {
           msg.textContent = '✅ Likes will be delivered within the next 3 hours!';
           urlInput.value = '';
 
           // POPUNDER: open ad behind current tab
-          window.open("https://www.revenuecpmgate.com/c224b5yt9?key=679c5cc4d18f056a038435131688033c",
-            "_blank", "noopener,noreferrer");
+          window.open(
+            "https://www.revenuecpmgate.com/c224b5yt9?key=679c5cc4d18f056a038435131688033c",
+            "_blank", "noopener,noreferrer"
+          );
 
           // reload after submission
           setTimeout(() => { window.location.reload(); }, 2000);
